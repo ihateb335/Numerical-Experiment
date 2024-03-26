@@ -15,6 +15,7 @@ namespace NE_DLL
         protected abstract void Abscises_and_Weights();          // X[] i W[]
         protected abstract double Scheme(double aj, double bj);  //  (5.3.0)
         protected int m, iter;
+        public decimal status;
 
         //-- Ітераційне обчислення визначеного інтеграла із заданою похибкою eps --//
         public double Integral(double a, double b, Func<double, double> f, double eps)
@@ -41,6 +42,7 @@ namespace NE_DLL
                 ai = bi; bi += hi;
                 imp = Integral(ai, bi, f, eps); improper += imp;
                 Console.WriteLine($" < {ai,13:F1}  {bi,13:F1} >   {imp,20:F16}");
+                status = (decimal)(100.0 * Math.Log10(Math.Abs(imp)) / Math.Log10(eps));
             }
             while (Math.Abs(imp) > eps);
             b = bi;

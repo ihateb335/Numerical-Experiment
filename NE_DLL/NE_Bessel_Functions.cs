@@ -253,13 +253,15 @@
 
             return BF_J_2(n, x, eps);
         }
-        
+
         public static double BF_J_test3(int n, double x, double eps = 1.0E-17)
         {
-            if(x < 4) return BF_J_1(n, x, eps);
-            if(x > 20) return BF_J_2(n, x, eps);
+            if (x < 4) return BF_J_1(n, x, eps);
+            if (x > 20) return BF_J_2(n, x, eps);
 
             return BF_J_3(n, x, eps);
         }
+
+        public static double Jn(int n, double x, double eps = 1.0E-17) => BF_J_test3(n, x, eps);
     }
 }
