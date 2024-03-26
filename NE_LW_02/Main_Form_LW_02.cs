@@ -28,14 +28,14 @@ namespace NE_LW_02
             }
         }
 
-        private void btn1_Click(object sender, EventArgs e)
+        private void startButton1_Click(object sender, EventArgs e)
         {
             thread1 = new Thread(threadAction); 
             thread1.Start(progressBar1); 
             startButton1.Enabled = false; 
         }
 
-        private void btn2_Click(object sender, EventArgs e)
+        private void startButton2_Click(object sender, EventArgs e)
         {
             thread2 = new Thread(threadAction);
             thread2.Start(progressBar2);
@@ -68,7 +68,7 @@ namespace NE_LW_02
             IterationLabel.Text = $"Кількість ітерацій = {trackBar1.Value}";
         }
 
-        private void AbortThreadOnClosing(ref Thread thread)
+        private void abortThreadOnClosing(ref Thread thread)
         {
             if (thread != null)
             {
@@ -81,8 +81,8 @@ namespace NE_LW_02
         }
         private void Main_Form_LW_02_FormClosing(object sender, FormClosingEventArgs e)
         {
-            AbortThreadOnClosing(ref thread1);
-            AbortThreadOnClosing(ref thread2);
+            abortThreadOnClosing(ref thread1);
+            abortThreadOnClosing(ref thread2);
         }
     }
 }

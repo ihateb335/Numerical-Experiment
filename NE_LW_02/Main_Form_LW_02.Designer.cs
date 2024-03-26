@@ -140,7 +140,7 @@
             this.startButton1.TabIndex = 3;
             this.startButton1.Text = "Старт";
             this.startButton1.UseVisualStyleBackColor = true;
-            this.startButton1.Click += new System.EventHandler(this.btn1_Click);
+            this.startButton1.Click += new System.EventHandler(this.startButton1_Click);
             // 
             // btn2
             // 
@@ -151,7 +151,7 @@
             this.startButton2.TabIndex = 6;
             this.startButton2.Text = "Старт";
             this.startButton2.UseVisualStyleBackColor = true;
-            this.startButton2.Click += new System.EventHandler(this.btn2_Click);
+            this.startButton2.Click += new System.EventHandler(this.startButton2_Click);
             // 
             // label3
             // 
